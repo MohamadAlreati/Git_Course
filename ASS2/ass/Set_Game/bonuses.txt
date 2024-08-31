@@ -1,0 +1,46 @@
+BONUS CHALLENGE FORM
+--------------------
+
+For each bonus challenge you have implemented, please replace the sentence "We are not entitled to this bonus."
+with a short description of:
+
+1. How it was implemented in your code
+2. Where it was used (in which class methods).
+3. How you tested that it is working correctly.
+
+--------------------
+
+1. Fully supporting all configuration fields and avoiding the use of magic numbers
+
+in the player class in both of the point and penalty methods we used the env.config to get the time to freeze.
+
+in the delaer class we also used the env.config to aplly the timer which can be changed in the config properties file and also the warningTime.
+
+in all of the methods that change the cards on the table (removeAllCardsFromTable , placeCradsOnTable) we used the env.config to check what is the size of the table which also can be changed in the config properties .
+
+in the table the playersTokens array size is also taken from the env.config.
+
+
+
+--------------------
+
+2. Terminating all threads (that you created) gracefully and in reverse order to the order they were created in.
+
+in the dealer class , I made an array of players-threads , in the terminate method I terminated them starting from the array.length -1 index and went down until the first index (idx 0 ) .
+
+--------------------
+
+3. Handling the config.turnTimeoutMillis value as follows:
+config.turnTimeoutMillis < 0: display nothing.
+config.turnTimeoutMillis = 0: display a timer since the last action (reshuffle or set collected).
+Note: in modes without a countdown timer the dealer must ensure there is always at least one legal set on the table.
+
+We are not entitled to this bonus.
+
+--------------------
+
+4. Making sure that the threads do not wake up unless some actual job needs to be done (e.g., a value needs to be
+changed on the display, key input needs to be handled, etc.) and the only threads created by you are:
+1 thread per player + 1 additional thread for non-human players.
+
+We are not entitled to this bonus.
